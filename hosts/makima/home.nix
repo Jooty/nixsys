@@ -4,6 +4,7 @@
     ../../home/rofi
     #../../home/programming
     #../../home/vscode
+    ../../home/wayland/hyprland
     ../../modules/swayidle.nix
   ];
 

@@ -30,6 +30,7 @@ in {
     swaylock-effects
     swww
     hyprpicker
+    pulseaudio
   ];
 
   services.dbus.enable = true;

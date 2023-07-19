@@ -7,5 +7,8 @@
   home.packages = with pkgs; [
     wget
     git
+    neofetch
+    firefox
+    helix
   ];
 }
