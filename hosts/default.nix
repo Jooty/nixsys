@@ -1,5 +1,6 @@
 inputs: let
   system = "x86_64-linux"
+  hmModule = inputs.home-manager.nixosModules.home-manager;
   hyprlandModule = inputs.hyprland.HomeManagerModules.default;
   ironbarModule = inputs.ironbar.HomeManagerModules.default;
   inherit (inputs.nixpkgs.lib) nixosSystem;
@@ -9,7 +10,7 @@ in {
     inherit system;
     specialArgs = { inherit inputs; };
     modules = [
-      ./making
+      ./makima
       hmModule
       {
         home-manager = {
