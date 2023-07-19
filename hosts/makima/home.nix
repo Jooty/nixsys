@@ -2,21 +2,22 @@
   imports = [
     ../../home
     ../../home/rofi
-    ../../home/ironbar
-    ../../home/wayland/hyprland
+    #../../home/programming
+    #../../home/vscode
     ../../modules/swayidle.nix
   ];
 
-  systemd.user.startServices = "sd.switch";
+  #systemd.user.startServices = "sd.switch";
   programs.home-manager.enable = true;
 
   home = {
-    username = "jay";
-    homeDirectory = "home/jay";
+    username = "makima";
+    homeDirectory = "/home/makima";
     packages = with pkgs; [
       firefox
       discord
       unzip
+      helix
       vlc
       gimp
       playerctl
@@ -24,6 +25,8 @@
       github-desktop
       obsidian
       spotify
+      kitty
+      exa
     ];
 
     stateVersion = "23.05";

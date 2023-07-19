@@ -1,38 +1,32 @@
-_: {
-  wayland.windowManager.hyprland.extraConfig = ''
+_:
 
+''
     monitor = HDMI-A-1,1920x1080@60, 3640x560, 1, transform, 3 #right
     monitor = DP-1,1920x1080@60, 0x560, 1, transform, 1 #left
     monitor = DP-2,2560x1440@144, 1080x1080, 1 #middle
     monitor = DP-3,1920x1080@144, 1400x0, auto #top
 
     input {
-
         kb_layout = us
         kb_variant =
         kb_model =
         kb_options =
         kb_rules =
-
         follow_mouse = 1
-
         sensitivity = -0.5 # -1.0 - 1.0, 0 means no modification.
         force_no_accel = true
     }
 
     general {
-
         gaps_in = 6
         gaps_out = 15
         border_size = 4
         col.active_border = rgb(f5c2e7)
         col.inactive_border = rgb(6c7086)
-
         layout = dwindle
     }
 
     decoration {
-
         rounding = 8
 
         #blur
@@ -56,11 +50,8 @@ _: {
     }
 
     animations {
-
         enabled = yes
-
         bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-
         animation = windows, 1, 7, myBezier
         animation = windowsOut, 1, 7, default, popin 80%
         animation = border, 1, 10, default
@@ -69,34 +60,25 @@ _: {
     }
 
     dwindle {
-
         pseudotile = yes
         preserve_split = yes
-
     }
 
     master {
-
         new_is_master = true
-
     }
 
     gestures {
-
         workspace_swipe = off
-
     }
 
     device:epic mouse V1 {
-
         sensitivity = -0.5
     }
 
     exec-once = swww init
-
     exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     exec-once = /nix/store/gjbi20m2wz9xhm18ifmcdl45cpgd7hpz-polkit-gnome-0.105/libexec/polkit-gnome-authentication-agent-1
-
     # swayidle / lock
     exec-once = ~/.local/bin/lock
 
@@ -118,7 +100,7 @@ _: {
 
     bind = $mainMod, q, exec, kitty
     bind = $mainMod, c, killactive,
-    bind = $mainMod, V, togglefloating,
+    bind = $mainMod, f, togglefloating,
     bind = $mainMod, d, exec, rofi -modi run -show drun
     bind = $mainMod, P, pseudo, # dwindle
     bind = $mainMod, J, togglesplit, # dwindle
@@ -156,5 +138,4 @@ _: {
     bindm = $mainMod, mouse:272, movewindow
     bindm = $mainMod, mouse:273, resizewindow
 
-  '';
-}
+''

@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs, inputs, config, ...}: let
   dbus-hyprland-environment = pkgs.writeTextFile {
     name = "dbus-hyprland-environment";
     destination = "/bin/dbus-hyprland-environment";
@@ -11,8 +11,8 @@
   };
 in {
   imports = [
-    # TODO: reenable
-    #../../../modules/greetd.nix
+    ../../../modules/greetd.nix
+    #../../../modules/picom.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -20,6 +20,7 @@ in {
     wayland
     glib
     grim
+    picom
     slurp
     swappy
     wl-clipboard
@@ -39,8 +40,12 @@ in {
       xdg-desktop-portal-gtk
     ];
   };
-
-  programs.xwayland.enable = true;
+    
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    nvidiaPatches = true;
+  };
 
   environment.sessionVariables = {
     GBM_BACKEND = "nvidia-drm";

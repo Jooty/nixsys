@@ -5,7 +5,7 @@
       ./hardware-configuration.nix
       ../../home/wayland/hyprland/wayland.nix
       ../../modules
-      #../../modules/fonts.nix
+      ../../modules/fonts.nix
   ];
 
   # Booting
@@ -16,7 +16,6 @@
     };
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
     };
   };
 
@@ -34,6 +33,10 @@
       videoDrivers = ["nvidia"];
       layout = "us";
       xkbVariant = "";
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
     };
   };
 

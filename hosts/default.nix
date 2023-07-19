@@ -1,8 +1,7 @@
 inputs: let
   system = "x86_64-linux";
   hmModule = inputs.home-manager.nixosModules.home-manager;
-  hyprlandModule = inputs.hyprland.HomeManagerModules.default;
-  ironbarModule = inputs.ironbar.HomeManagerModules.default;
+  hyprlandModule = inputs.hyprland.homeManagerModules.default;
   inherit (inputs.nixpkgs.lib) nixosSystem;
 in {
   # Main machine; daily driver
@@ -21,7 +20,6 @@ in {
             imports = [
               ./makima/home.nix
               hyprlandModule
-              ironbarModule
             ];
           };
         };

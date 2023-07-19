@@ -7,7 +7,7 @@
       modi = "run,drun,window";
       icon-theme = "Oranchelo";
       show-icons = true;
-      terminal = "wezterm";
+      terminal = "kitty";
       drun-display-format = "{icon} {name}";
       location = 0;
       disable-history = false;

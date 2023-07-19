@@ -17,10 +17,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ironbar = {
-      url = "github:JakeStanger/ironbar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { nixpkgs, ... } @ inputs: let
