@@ -1,5 +1,5 @@
 inputs: let
-  system = "x86_64-linux"
+  system = "x86_64-linux";
   hmModule = inputs.home-manager.nixosModules.home-manager;
   hyprlandModule = inputs.hyprland.HomeManagerModules.default;
   ironbarModule = inputs.ironbar.HomeManagerModules.default;
@@ -27,8 +27,5 @@ in {
         };
       }
     ];
-  }
-
-  # TODO: Thinkpad
-  # TODO: Hezner VPS?
+  };
 }

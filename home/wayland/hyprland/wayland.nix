@@ -11,7 +11,8 @@
   };
 in {
   imports = [
-    ../../../modules/greetd.nix
+    # TODO: reenable
+    #../../../modules/greetd.nix
   ];
 
   environment.systemPackages = with pkgs; [

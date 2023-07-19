@@ -4,9 +4,8 @@ inputs: {
       hostname = "makima";
       profiles.system = {
         user = "root";
-        path = activate.nixos inputs.self.nixosConfigurations.Makima;
+        path = activate.nixos inputs.self.nixosConfigurations.makima;
       };
-      sshUser = "jay";
       magicRollback = false;
     }
   }

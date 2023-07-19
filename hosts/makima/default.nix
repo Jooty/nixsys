@@ -5,7 +5,7 @@
       ./hardware-configuration.nix
       ../../home/wayland/hyprland/wayland.nix
       ../../modules
-      ../../modules/fonts.nix
+      #../../modules/fonts.nix
   ];
 
   # Booting
@@ -87,7 +87,5 @@
     qemu_kvm
     pinentry-gtk2
     jdk17
-  ]
-
-  system.stateVersion = "23.05";
+  ];
 }
