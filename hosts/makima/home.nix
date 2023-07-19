@@ -4,6 +4,7 @@
     ../../home/rofi
     ../../home/ironbar
     ../../home/wayland/hyprland
+    ../../modules/swayidle.nix
   ];
 
   systemd.user.startServices = "sd.switch";
