@@ -11,10 +11,10 @@
 
 ## :open_book: Table of contents
 
-+ :house_with_garden: [home](home)
-+ :computer: [hosts](hosts)
-  - :cherry_blossom: [makima](hosts/makima)
-+ :electric_plug: [modules](modules)
++ :house_with_garden: [home](home)          ‣ Software
++ :computer: [hosts](hosts)                 ‣ My machines
+  - :cherry_blossom: [makima](hosts/makima) ‣ Desktop PC, my daily driver
++ :electric_plug: [modules](modules)        ‣ NixOS modules
 
 ## :busts_in_silhouette: Credit
 + [starrfox](https://github.com/StarrFox) - introduced nix, general help
