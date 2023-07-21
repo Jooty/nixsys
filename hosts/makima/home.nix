@@ -1,9 +1,12 @@
 { pkgs, ... }: {
   imports = [
     ../../home
+    ../../home/kitty
+    ../../home/firefox
+    ../../home/helix
     ../../home/rofi
-    #../../home/programming
-    #../../home/vscode
+    ../../home/programming
+    ../../home/vscode
     ../../home/wayland/hyprland
     ../../modules/swayidle.nix
   ];
@@ -15,19 +18,17 @@
     username = "makima";
     homeDirectory = "/home/makima";
     packages = with pkgs; [
-      firefox
       discord
       unzip
-      helix
-      vlc
-      gimp
       playerctl
-      wine
-      github-desktop
+      gh
       obsidian
       spotify
-      kitty
       exa
+      pywal
+      lutris
+      wine
+      github-desktop
     ];
 
     stateVersion = "23.05";

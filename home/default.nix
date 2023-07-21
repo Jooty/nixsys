@@ -1,14 +1,13 @@
 { pkgs, ... }: {
   imports = [
-    #./firefox
-    #./helix
+
   ];
 
   home.packages = with pkgs; [
+    # Apps that are globally installed.
     wget
     git
     neofetch
-    firefox
-    helix
+    nano
   ];
 }
