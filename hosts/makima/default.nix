@@ -75,6 +75,5 @@
     qemu_kvm
     pinentry-gtk2
     jdk17
-    ranger
   ];
 }

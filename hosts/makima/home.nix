@@ -18,17 +18,22 @@
     username = "makima";
     homeDirectory = "/home/makima";
     packages = with pkgs; [
+      flameshot
+      wineWowPackages.stable
+      winetricks
       discord
+      
+      jetbrains.rider
+      github-desktop
+      gh
+
       unzip
       playerctl
-      gh
       obsidian
       spotify
       exa
       pywal
       lutris
-      wine
-      github-desktop
     ];
 
     stateVersion = "23.05";
