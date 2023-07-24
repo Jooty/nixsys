@@ -1,4 +1,4 @@
-_: {
+{ pkgs, ... }: {
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
@@ -16,4 +16,10 @@ _: {
       };
     };
   };
+
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    konsole
+    khelpcenter
+    plasma-browser-integration
+  ];
 }
