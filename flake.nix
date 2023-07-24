@@ -17,6 +17,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    devenv = {
+      url = "github:cachix/devenv/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, ... } @ inputs: let
@@ -29,8 +33,12 @@
       name = "nixsys";
       packages = with pkgs; [
         nil
+        wget
+        neofetch
+        nano
         git
         alejandra
+        ranger
       ];
     };
     formatter.${system} = pkgs.alejandra;
