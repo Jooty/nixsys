@@ -3,9 +3,8 @@
 {
   imports = [
       ./hardware-configuration.nix
-      ../../home/wayland/hyprland/wayland.nix
+      ../../home/x11/plasma
       ../../modules
-      ../../modules/fonts.nix
   ];
 
   # Booting
@@ -26,20 +25,7 @@
 
   # Networking
   networking.hostName = "makima";
-
-  services = {
-    xserver = {
-      enable = true;
-      videoDrivers = ["nvidia"];
-      layout = "us";
-      xkbVariant = "";
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
-    };
-  };
-
+   
   services.pcscd.enable = true;
 
   sound.enable = true;
@@ -83,7 +69,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wget
     dconf
     polkit_gnome
     libvirt

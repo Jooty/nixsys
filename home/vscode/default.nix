@@ -4,7 +4,7 @@
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
     userSettings = {
-      "editor.fontSize" = 12;
+      "editor.fontSize" = 11;
       "editor.fontLigatures" = true;
       "editor.fontFamily" = "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace'";
       "files.autoSave" = "afterDelay";

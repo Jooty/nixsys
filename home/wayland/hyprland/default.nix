@@ -1,11 +1,11 @@
 { inputs, pkgs, ...  }: {
   imports = [
-    #../waybar.nix
+    ../core/waybar
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.default;
-    extraConfig = (import ./config.nix {inherit (config);});
+    extraConfig = (import ./config.nix {});
   };
 }

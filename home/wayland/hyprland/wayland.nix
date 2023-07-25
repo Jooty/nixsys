@@ -12,7 +12,6 @@
 in {
   imports = [
     ../../../modules/greetd.nix
-    #../../../modules/picom.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -40,12 +39,6 @@ in {
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
-  };
-    
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    nvidiaPatches = true;
   };
 
   environment.sessionVariables = {

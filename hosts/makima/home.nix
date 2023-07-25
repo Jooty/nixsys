@@ -1,9 +1,12 @@
 { pkgs, ... }: {
   imports = [
     ../../home
+    ../../home/kitty
+    ../../home/firefox
+    ../../home/helix
     ../../home/rofi
-    #../../home/programming
-    #../../home/vscode
+    ../../home/programming
+    ../../home/vscode
     ../../home/wayland/hyprland
     ../../modules/swayidle.nix
   ];
@@ -15,19 +18,22 @@
     username = "makima";
     homeDirectory = "/home/makima";
     packages = with pkgs; [
-      firefox
+      flameshot
+      wineWowPackages.stable
+      winetricks
       discord
-      unzip
-      helix
-      vlc
-      gimp
-      playerctl
-      wine
+      
+      jetbrains.rider
       github-desktop
+      gh
+
+      unzip
+      playerctl
       obsidian
       spotify
-      kitty
       exa
+      pywal
+      lutris
     ];
 
     stateVersion = "23.05";

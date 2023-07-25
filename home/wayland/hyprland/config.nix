@@ -1,10 +1,7 @@
 _:
 
 ''
-    monitor = HDMI-A-1,1920x1080@60, 3640x560, 1, transform, 3 #right
-    monitor = DP-1,1920x1080@60, 0x560, 1, transform, 1 #left
-    monitor = DP-2,2560x1440@144, 1080x1080, 1 #middle
-    monitor = DP-3,1920x1080@144, 1400x0, auto #top
+    monitor=,preferred,auto,auto
 
     input {
         kb_layout = us
@@ -19,8 +16,8 @@ _:
 
     general {
         gaps_in = 6
-        gaps_out = 15
-        border_size = 4
+        gaps_out = 8
+        border_size = 2
         col.active_border = rgb(f5c2e7)
         col.inactive_border = rgb(6c7086)
         layout = dwindle
