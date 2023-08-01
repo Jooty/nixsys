@@ -10,6 +10,7 @@
     fstrim = {
       enable = true;
     };
+    gnome3.gnome-keyring.enable = true;
   };
 
   time.timeZone = "America/New_York";
