@@ -1,4 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  riderScript = pkgs.writeShellScriptBin "rider"
+    ''
+      ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider
+    '';
+  rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
+in
+{
   imports = [
     ../../home
     ../../home/kitty
@@ -23,6 +31,7 @@
       winetricks
       discord
       
+      steam-run
       jetbrains.rider
       github-desktop
       gh
