@@ -8,20 +8,26 @@
   ];
 
   # Booting
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 8;
+  boot = {
+    kernelParams = ["quiet"];
+    initrd.systemd.enable = true;
+    plymouth.enable = true;
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 8;
+      };
+      efi = {
+        canTouchEfiVariables = true;
+      };
     };
-    efi = {
-      canTouchEfiVariables = true;
-    };
+
+    extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
+    kernelModules = ["v4l2loopback" "kvm-intel"];
   };
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
-  boot.kernelModules = ["v4l2loopback" "kvm-intel"];
-
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
 
   # Networking
   networking.hostName = "makima";
@@ -75,5 +81,7 @@
     qemu_kvm
     pinentry-gtk2
     jdk17
+    git
+    neofetch
   ];
 }
