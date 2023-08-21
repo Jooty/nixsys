@@ -12,11 +12,8 @@ in
     ../../home/kitty
     ../../home/firefox
     ../../home/helix
-    ../../home/rofi
     ../../home/programming
     ../../home/vscode
-    ../../home/wayland/hyprland
-    ../../modules/swayidle.nix
   ];
 
   #systemd.user.startServices = "sd.switch";
@@ -31,6 +28,7 @@ in
       winetricks
       discord
       
+      # Need steam-run for Rider Co-pilot.
       steam-run
       jetbrains.rider
       github-desktop

@@ -16,6 +16,7 @@
       systemd-boot = {
         enable = true;
         configurationLimit = 8;
+        consoleMode = "max"; # Select the highest resolution for the bootloader.
       };
       efi = {
         canTouchEfiVariables = true;
@@ -25,9 +26,6 @@
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
     kernelModules = ["v4l2loopback" "kvm-intel"];
   };
-
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
 
   # Networking
   networking.hostName = "makima";
@@ -83,5 +81,6 @@
     jdk17
     git
     neofetch
+    neovim
   ];
 }

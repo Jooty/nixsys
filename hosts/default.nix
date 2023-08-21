@@ -19,7 +19,6 @@ in {
           users.makima = {
             imports = [
               ./makima/home.nix
-              hyprlandModule
             ];
           };
         };
