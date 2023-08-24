@@ -81,6 +81,6 @@
     jdk17
     git
     neofetch
-    neovim
+    playerctl
   ];
 }

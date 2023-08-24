@@ -11,7 +11,6 @@ in
     ../../home
     ../../home/kitty
     ../../home/firefox
-    ../../home/helix
     ../../home/programming
     ../../home/vscode
   ];
@@ -33,14 +32,13 @@ in
       jetbrains.rider
       github-desktop
       gh
+      neovim
 
       unzip
-      playerctl
       obsidian
       spotify
       exa
       pywal
-      lutris
     ];
 
     stateVersion = "23.05";
