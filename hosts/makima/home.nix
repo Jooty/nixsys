@@ -9,6 +9,7 @@ in
 {
   imports = [
     ../../home
+    ../../home/wayland/hyprland
     ../../home/kitty
     ../../home/firefox
     ../../home/programming
@@ -22,24 +23,39 @@ in
     username = "makima";
     homeDirectory = "/home/makima";
     packages = with pkgs; [
+      # apps
       flameshot
       wineWowPackages.stable
       winetricks
-      discord
-      
+      webcord-vencord
       # Need steam-run for Rider Co-pilot.
       steam-run
       jetbrains.rider
       github-desktop
-      gh
       neovim
-
-      unzip
       obsidian
       spotify
+      vlc
+
+      # tools
+      gh
+      unzip
       exa
       pywal
+      python3
+      nodejs
+      ripgrep
+      gcc
+      lua
+      lazygit
     ];
+
+    # symlink the .zshrc config
+    file.".zshrc" = {
+      source = ../../config/.zshrc;
+      recursive = true;
+      executable = true;
+    };
 
     stateVersion = "23.05";
   };

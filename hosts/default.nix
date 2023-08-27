@@ -10,6 +10,7 @@ in {
     specialArgs = { inherit inputs; };
     modules = [
       ./makima
+      #hyprlandModule
       hmModule
       {
         home-manager = {

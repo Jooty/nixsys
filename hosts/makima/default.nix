@@ -3,7 +3,7 @@
 {
   imports = [
       ./hardware-configuration.nix
-      ../../home/x11/plasma
+      ../../home/wayland
       ../../modules
   ];
 
@@ -11,7 +11,6 @@
   boot = {
     kernelParams = ["quiet"];
     initrd.systemd.enable = true;
-    plymouth.enable = true;
     loader = {
       systemd-boot = {
         enable = true;
@@ -43,8 +42,17 @@
     wireplumber.enable = true;
   };
 
-  programs.steam = {
-    enable = true;
+  programs= {
+    steam = {
+      enable = true;
+    };
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    };
   };
 
   security.polkit.enable = true;
@@ -82,5 +90,6 @@
     git
     neofetch
     playerctl
+    neovim
   ];
 }
