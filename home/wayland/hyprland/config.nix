@@ -1,7 +1,14 @@
-_:
-
+let
+    # Hyprland doesn't like the hashtags.
+    colors = import ../../theme/colors.nix {};
+    border-color = builtins.replaceStrings ["#"] [""] colors.accent;
+    inactive-border-color = builtins.replaceStrings ["#"] [""] colors.inactive-accent;
+in with colors;
 ''
     monitor=,preferred,auto,auto
+    
+    exec-once = swww init
+    exec-once = waybar
 
     input {
         kb_layout = us
@@ -16,27 +23,28 @@ _:
 
     general {
         gaps_in = 6
-        gaps_out = 8
+        gaps_out = 6
         border_size = 2
-        col.active_border = rgb(f5c2e7)
-        col.inactive_border = rgb(6c7086)
+        col.active_border = rgb(${border-color})
+        col.inactive_border = rgb(${inactive-border-color})
         layout = dwindle
     }
 
     decoration {
         rounding = 8
 
-        #blur
-        blur = yes
-        blur_size = 5
-        blur_passes = 3
-        blur_new_optimizations = on
-        multisample_edges = true
-
         #opactity
         inactive_opacity = 1.0
         active_opacity = 1.0
         fullscreen_opacity = 1.0
+
+        #blur
+        blur {
+            enabled = true
+            size = 3
+            passes = 3
+            new_optimizations = true
+        }
 
         # shadow
         drop_shadow = yes
@@ -72,12 +80,6 @@ _:
     device:epic mouse V1 {
         sensitivity = -0.5
     }
-
-    exec-once = swww init
-    exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-    exec-once = /nix/store/gjbi20m2wz9xhm18ifmcdl45cpgd7hpz-polkit-gnome-0.105/libexec/polkit-gnome-authentication-agent-1
-    # swayidle / lock
-    exec-once = ~/.local/bin/lock
 
     #windowrules
     windowrulev2 = noshadow, floating:0
