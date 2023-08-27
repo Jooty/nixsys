@@ -1,7 +1,7 @@
-{pkgs, ...}: {
+{pkgs, ...}: 
+
+{
   fonts = {
-    enableDefaultFonts = false;
-    fontDir.enable = true;
     fonts = with pkgs; [
       corefonts
       jost
