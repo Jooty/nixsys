@@ -9,7 +9,6 @@ in
 {
   imports = [
     ../../home
-    ../../home/wayland/hyprland
     ../../home/kitty
     ../../home/firefox
     ../../home/programming
@@ -27,7 +26,8 @@ in
       flameshot
       wineWowPackages.stable
       winetricks
-      webcord-vencord
+      discord
+      lutris
       # Need steam-run for Rider Co-pilot.
       steam-run
       jetbrains.rider
@@ -48,6 +48,7 @@ in
       gcc
       lua
       lazygit
+      btop
     ];
 
     # symlink the .zshrc config

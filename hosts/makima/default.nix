@@ -3,8 +3,8 @@
 {
   imports = [
       ./hardware-configuration.nix
-      ../../home/wayland
       ../../modules
+      ../../home/x11/plasma
   ];
 
   # Booting
