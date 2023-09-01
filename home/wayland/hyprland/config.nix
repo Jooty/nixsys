@@ -85,12 +85,8 @@ in with colors;
     windowrulev2 = noshadow, floating:0
     windowrulev2 = float, title:^(Volume Control)$
     windowrulev2 = float, title:^(Picture in picture)$
-    windowrulev2 = float, title:^(RuneLite)$
-    windowrulev2 = move 500 300, title:^(RuneLite)$
-    windowrulev2 = size 810 580, title:^(RuneLite)$
     windowrulev2 = float, title:^(Steam)$
     windowrulev2 = float, title:^(Friends List)$
-    windowrulev2 = float, title:^(Cryptomator)$
     windowrulev2 = fullscreen, title:^(wlogout)$
     windowrulev2 = float, title:^(wlogout)$
 
@@ -101,6 +97,7 @@ in with colors;
     bind = $mainMod, c, killactive,
     bind = $mainMod, f, togglefloating,
     bind = $mainMod, d, exec, rofi -modi run -show drun
+    bind = $mainMod, backspace, exec, btop
     bind = $mainMod, P, pseudo, # dwindle
     bind = $mainMod, J, togglesplit, # dwindle
     bind =, Print, exec, grim -g "$(slurp)" - | swappy -f -
