@@ -4,6 +4,7 @@
   imports = [
       ./hardware-configuration.nix
       ../../modules
+      ../../modules/zsh.nix
       ../../home/x11/plasma
   ];
 
@@ -41,6 +42,8 @@
     pulse.enable = true;
     wireplumber.enable = true;
   };
+  services.getty.autologinUser = "makima";
+  security.sudo.wheelNeedsPassword = false;
 
   programs= {
     steam = {

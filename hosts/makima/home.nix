@@ -36,6 +36,11 @@ in
       obsidian
       spotify
       vlc
+      (vivaldi.override {
+        proprietaryCodecs = true;
+        enableWidevine = false;
+      })
+      latte-dock
 
       # tools
       gh
@@ -51,9 +56,16 @@ in
       btop
     ];
 
-    # symlink the .zshrc config
+    # symlink the zsh config
     file.".zshrc" = {
       source = ../../config/.zshrc;
+      recursive = true;
+      executable = true;
+    };
+
+    # symlink the starship.toml config
+    file."starship.toml" = {
+      source = ../../config/starship.toml;
       recursive = true;
       executable = true;
     };
