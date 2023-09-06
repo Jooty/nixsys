@@ -8,6 +8,7 @@ export TERM="xterm-256color"
 ZSH_THEME="norm"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
+eval "$(starship init zsh)"
 
 #  ┬  ┌─┐┌─┐┌┬┐  ┌─┐┌┐┌┌─┐┬┌┐┌┌─┐
 #  │  │ │├─┤ ││  ├┤ ││││ ┬││││├┤ 
