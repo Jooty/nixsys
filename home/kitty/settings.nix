@@ -1,54 +1,25 @@
 let
   colors = import ../theme/colors.nix {};
 in with colors; ''
-# gruvbox dark by morhetz, https://github.com/morhetz/gruvbox
-# This work is licensed under the terms of the MIT license.
-# For a copy, see https://opensource.org/licenses/MIT.
-
-background  #282828
-foreground  #ebdbb2
-
-cursor                #928374
-
-selection_foreground  #928374
-selection_background  #3c3836
-
-color0  #282828
-color8  #928374
-
-# red
-color1                #cc241d
-# light red
-color9                #fb4934
-
-# green
-color2                #98971a
-# light green
-color10               #b8bb26
-
-# yellow
-color3                #d79921
-# light yellow
-color11               #fabd2d
-
-# blue
-color4                #458588
-# light blue
-color12               #83a598
-
-# magenta
-color5                #b16286
-# light magenta
-color13               #d3869b
-
-# cyan
-color6                #689d6a
-# lighy cyan
-color14               #8ec07c
-
-# light gray
-color7                #a89984
-# dark gray
-color15               #928374
-
+background #0e1419
+foreground #e5e1cf
+cursor #f19618
+selection_background #243340
+color0 #000000
+color8 #323232
+color1 #ff3333
+color9 #ff6565
+color2 #b8cc52
+color10 #e9fe83
+color3 #e6c446
+color11 #fff778
+color4 #36a3d9
+color12 #68d4ff
+color5 #f07078
+color13 #ffa3aa
+color6 #95e5cb
+color14 #c7fffc
+color7 #ffffff
+color15 #ffffff
+selection_foreground #0e1419
 ''
