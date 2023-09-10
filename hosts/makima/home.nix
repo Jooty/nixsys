@@ -41,6 +41,7 @@ in
         enableWidevine = false;
       })
       latte-dock
+      krita
 
       # tools
       gh
