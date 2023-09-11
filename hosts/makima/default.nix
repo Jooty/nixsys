@@ -10,8 +10,19 @@
 
   # Booting
   boot = {
-    kernelParams = ["quiet"];
-    initrd.systemd.enable = true;
+    kernelParams = [ "quiet" "intel_iommu=on" ];
+    kernelModules = [ "kvm-intel" "v4l2loopback" ];
+    initrd = {
+      systemd.enable = true;
+      availableKernelModules = [ "amdgpu" "vfio-pci"];
+      preDeviceCommands = ''
+        DEVS="0000:01:00.0 0000:01:00.1"
+        for DEV in $DEVS; do
+          echo "vfio-pci" > /sys/bus/pci/devices/$DEV/driver_override
+        done
+        modprobe -i vfio-pci
+      '';
+    };
     loader = {
       systemd-boot = {
         enable = true;
@@ -24,7 +35,6 @@
     };
 
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
-    kernelModules = ["v4l2loopback" "kvm-intel"];
   };
 
   # Networking
@@ -48,13 +58,6 @@
   programs= {
     steam = {
       enable = true;
-    };
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-      ];
     };
   };
 
@@ -82,19 +85,32 @@
       daemon.enable = true;
     };
   };
+
+  virtualisation = {
+    docker.enable = true;
+    libvirtd = {
+      enable = true;
+      qemuOvmf = true;
+      qemuRunAsRoot = true;
+      onBoot = "ignore";
+      onShutdown = "shutdown";
+    };
+  };
   
-  virtualisation.docker.enable = true;
+  programs.dconf.enable = true;
 
   environment.systemPackages = with pkgs; [
     dconf
     polkit_gnome
     libvirt
     qemu_kvm
+    virt-manager
     pinentry-gtk2
     jdk17
     git
     neofetch
     playerctl
     neovim
+    partition-manager
   ];
 }
