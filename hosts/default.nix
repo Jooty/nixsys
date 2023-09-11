@@ -1,7 +1,7 @@
 inputs: let
   system = "x86_64-linux";
   hmModule = inputs.home-manager.nixosModules.home-manager;
-  hyprlandModule = inputs.hyprland.homeManagerModules.default;
+  plasmaManager = inputs.plasma-manager.homeManagerModules.plasma-manager;
   inherit (inputs.nixpkgs.lib) nixosSystem;
 in {
   # Main machine; daily driver
@@ -10,7 +10,6 @@ in {
     specialArgs = { inherit inputs; };
     modules = [
       ./makima
-      #hyprlandModule
       hmModule
       {
         home-manager = {
@@ -20,6 +19,7 @@ in {
           users.makima = {
             imports = [
               ./makima/home.nix
+              plasmaManager
             ];
           };
         };

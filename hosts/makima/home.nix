@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   riderScript = pkgs.writeShellScriptBin "rider"
     ''
@@ -13,6 +13,7 @@ in
     ../../home/firefox
     ../../home/programming
     ../../home/vscode
+    ../../home/x11/plasma/plasma.nix # load plasma apps/configs
   ];
 
   #systemd.user.startServices = "sd.switch";
