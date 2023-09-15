@@ -10,11 +10,11 @@
 
   # Booting
   boot = {
-    kernelParams = [ "quiet" "intel_iommu=on" ];
+    kernelParams = [ "intel_iommu=on" ];
     kernelModules = [ "kvm-intel" "v4l2loopback" ];
     initrd = {
       systemd.enable = true;
-      availableKernelModules = [ "amdgpu" "vfio-pci"];
+      availableKernelModules = [ "amdgpu" "vfio-pci" ];
       preDeviceCommands = ''
         DEVS="0000:01:00.0 0000:01:00.1"
         for DEV in $DEVS; do
@@ -112,5 +112,6 @@
     playerctl
     neovim
     partition-manager
+    starship
   ];
 }
