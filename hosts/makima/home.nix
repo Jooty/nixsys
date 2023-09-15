@@ -43,6 +43,8 @@ in
       })
       latte-dock
       krita
+      obs-studio
+      droidcam
 
       # tools
       gh
