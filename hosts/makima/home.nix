@@ -12,7 +12,6 @@ in
     ../../home/kitty
     ../../home/firefox
     ../../home/programming
-    ../../home/vscode
     ../../home/x11/plasma/plasma.nix # load plasma apps/configs
   ];
 
@@ -45,6 +44,7 @@ in
       krita
       obs-studio
       droidcam
+      vscode-fhs
 
       # tools
       gh
@@ -58,6 +58,8 @@ in
       lua
       lazygit
       btop
+      cargo
+      rustc
     ];
 
     # symlink the zsh config
