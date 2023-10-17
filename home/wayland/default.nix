@@ -12,6 +12,7 @@
     picom
     slurp
     swappy
+    btop
     wl-clipboard
     wlogout
     wlr-randr
@@ -22,6 +23,7 @@
     rofi
     hyprpicker
     pavucontrol
+    webcord-vencord
   ];
 
   services.dbus.enable = true;
