@@ -10,12 +10,16 @@ in
   imports = [
     ../../home
     ../../home/kitty
-    ../../home/firefox
     ../../home/programming
-    ../../home/x11/plasma/plasma.nix # load plasma apps/configs
+
+    # Load this when you want to be on wayland/hyprland
+    # ../../home/wayland/hyprland
+
+    # Load this when you want to be on x11/KDE Plasma
+    ../../home/x11
+    ../../home/x11/plasma/plasma.nix
   ];
 
-  #systemd.user.startServices = "sd.switch";
   programs.home-manager.enable = true;
 
   home = {
@@ -23,11 +27,6 @@ in
     homeDirectory = "/home/makima";
     packages = with pkgs; [
       # apps
-      flameshot
-      wineWowPackages.stable
-      winetricks
-      discord
-      lutris
       # Need steam-run for Rider Co-pilot.
       steam-run
       jetbrains.rider
@@ -35,31 +34,30 @@ in
       neovim
       obsidian
       spotify
+      #nur.repos.nltch.spotify-adblock
       vlc
-      (vivaldi.override {
-        proprietaryCodecs = true;
-        enableWidevine = false;
-      })
       latte-dock
       krita
       obs-studio
       droidcam
       vscode-fhs
+      qbittorrent
+      protonvpn-gui
+      (vivaldi.override {
+        proprietaryCodecs = true;
+        enableWidevine = false;
+      })
+      nextcloud-client
 
       # tools
       gh
       unzip
       exa
       pywal
-      python3
-      nodejs
       ripgrep
-      gcc
-      lua
       lazygit
       btop
-      cargo
-      rustc
+      tmux
     ];
 
     # symlink the zsh config

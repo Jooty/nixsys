@@ -71,3 +71,4 @@ DISABLE_AUTO_UPDATE="true"
 #  ├─┤│  │├─┤└─┐
 #  ┴ ┴┴─┘┴┴ ┴└─┘
 alias ls='exa -1 -l --icons -a --sort=Name'
+alias rebuild='cd ~/nixsys/ && sudo nixos-rebuild switch --flake .#makima && cd -'
