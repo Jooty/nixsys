@@ -36,6 +36,7 @@
 
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
   };
+  systemd.enableEmergencyMode = false;
 
   # Networking
   networking.hostName = "makima";
@@ -105,6 +106,8 @@
   
   programs.dconf.enable = true;
 
+  services.gnome3.gnome-keyring.enable = true;
+
   environment.systemPackages = with pkgs; [
     dconf
     polkit_gnome
@@ -117,7 +120,6 @@
     neofetch
     playerctl
     neovim
-    partition-manager
     starship
   ];
 }
